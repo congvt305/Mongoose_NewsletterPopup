@@ -1,0 +1,15 @@
+<?php if ($block->isEnable()): ?>
+    <?php $buttonColor = $block->getButtonColor(); ?>
+    <?php $delay = $block->getDelay(); ?>
+    <?php $cookie_name = "NewsletterPopup"; ?>
+    <?php $cookie_value = "newsletter_popup"; ?>     
+    <span><?= $block->getText() ?></span>
+    <div class="control">
+        <input type="text" name="" value="" title="" class="" placeholder="Enter your email address"/>
+    </div>
+    <div class="newsletter-button">
+        <button type="submit" class="action newsletter-subscribe" name="newsletter" style="background: <?= $buttonColor?>; border: <?= $buttonColor?>;">
+            <span><?= $block->getButtonText() ?></span>
+        </button>
+    </div>
+<?php endif; ?>

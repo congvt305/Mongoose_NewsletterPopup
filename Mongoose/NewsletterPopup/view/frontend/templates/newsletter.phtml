@@ -1,0 +1,14 @@
+<?php if ($block->isEnable()): ?>
+    <div id="newsletter-popup"></div>
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "Mongoose_NewsletterPopup/js/newsletter": {
+                    "title" : "<?= $block->getTitle() ?>",
+                    "successUrl" : "<?= $block->getUrl('newsletterpopup/ajax/success') ?>",
+                    "delay" : "<?= $block->getDelay(); ?>"
+                }
+            }
+        }
+    </script>
+<?php endif; ?>
