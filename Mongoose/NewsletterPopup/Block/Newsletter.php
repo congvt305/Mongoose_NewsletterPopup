@@ -48,4 +48,9 @@ class Newsletter extends Template
     {
         return $this->helperData->getButtonColor() ? '#'.$this->helperData->getButtonColor() : '';
     }
+
+    public function getFormActionUrl()
+    {
+        return $this->getUrl('newsletter/subscriber/new', ['_secure' => true]);
+    }
 }

@@ -4,12 +4,29 @@
     <?php $cookie_name = "NewsletterPopup"; ?>
     <?php $cookie_value = "newsletter_popup"; ?>     
     <span><?= $block->getText() ?></span>
-    <div class="control">
-        <input type="text" name="" value="" title="" class="" placeholder="Enter your email address"/>
-    </div>
-    <div class="newsletter-button">
-        <button type="submit" class="action newsletter-subscribe" name="newsletter" style="background: <?= $buttonColor?>; border: <?= $buttonColor?>;">
-            <span><?= $block->getButtonText() ?></span>
-        </button>
-    </div>
+    <form class="form subscribe"
+        novalidate
+        action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>"
+        method="post"
+        data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+        id="newsletter-validate-detail">
+        <div class="control">
+            <label for="newsletter">
+                <input name="email" type="email" id="newsletter"
+                       placeholder="<?= $block->escapeHtml(__('Enter your email address')) ?>"
+                       data-mage-init='{"mage/trim-input":{}}'
+                       data-validate="{required:true, 'validate-email':true}"
+                />
+            </label>
+        </div>
+        <div class="newsletter-button">
+            <button class="action newsletter-subscribe"
+                    title="<?= $block->escapeHtmlAttr($block->getButtonText()) ?>"
+                    type="submit"
+                    aria-label="<?= $block->getButtonText() ?>"
+                    style="background: <?= $buttonColor?>; border: <?= $buttonColor?>;">
+                <span><?= $block->escapeHtml($block->getButtonText()) ?></span>
+            </button>
+        </div>
+    </form>
 <?php endif; ?>

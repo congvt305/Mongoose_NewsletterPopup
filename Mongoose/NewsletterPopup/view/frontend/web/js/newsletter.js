@@ -23,6 +23,7 @@ define([
                         success: function(response) {
                             if (response.success) {
                                 $('#newsletter-popup').html(response.success);
+                                $('#newsletter-popup').trigger('contentUpdated');
                                 var popup = modal(options, $('#newsletter-popup'));
                                 $('#newsletter-popup').modal('openModal');
                             }           

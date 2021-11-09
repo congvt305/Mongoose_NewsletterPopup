@@ -2,5 +2,9 @@
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Mongoose_NewsletterPopup" />
+    <module name="Mongoose_NewsletterPopup">
+        <sequence>
+            <module name="Magento_Newsletter"/>
+        </sequence>
+    </module>
 </config>
